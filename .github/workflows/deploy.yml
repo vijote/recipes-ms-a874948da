@@ -57,7 +57,7 @@ jobs:
     # 1. Descargar la Task Definition actual o usar una local
     - name: Download task definition
       run: |
-        aws ecs describe-task-definition --task-definition mi-app-task-family --query taskDefinition > task-definition.json
+        aws ecs describe-task-definition --task-definition recipes-app-blue-recipes --query taskDefinition > task-definition.json
 
     # 2. Actualizar el campo 'image' en el JSON con la nueva imagen de ECR
     - name: Fill in the new image ID in the Amazon ECS task definition
