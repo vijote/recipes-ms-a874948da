@@ -28,8 +28,7 @@ COPY --from=builder /app/dist ./dist
 # Instalamos solo dependencias de producción para ahorrar espacio
 RUN npm install --only=production
 
-# Exponemos el puerto (por defecto Nest usa el 3000)
-EXPOSE 3000
+EXPOSE 3001
 
 # Comando para arrancar la app
 CMD ["node", "dist/main"]
