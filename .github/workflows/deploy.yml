@@ -67,6 +67,7 @@ jobs:
         task-definition: task-definition.json
         container-name: recipes-container  # Debe coincidir con el nombre en el JSON
         image: ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
+        command: '["npm", "run", "start:prod"]'
 
     # 3. Desplegar la nueva definición al servicio de ECS
     - name: Deploy Amazon ECS task definition
